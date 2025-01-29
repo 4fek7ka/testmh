@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Page</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Подключаем Three.js перед Vanta -->
+  </head>
+  <body>
+    <!-- Начальная страница -->
+    <div id="initialScreen">
+      <div id="fakeChart">
+        <div class="y-axis">
+          <span>100</span>
+          <span>80</span>
+          <span>60</span>
+          <span>40</span>
+          <span>20</span>
+          <span>0</span>
+        </div>
+        <div class="chart-content">
+          <div class="bar" style="height: 70%" data-value="70"></div>
+          <div class="bar" style="height: 50%" data-value="50"></div>
+          <div class="bar" style="height: 90%" data-value="90"></div>
+          <div class="bar" style="height: 60%" data-value="60"></div>
+          <div class="bar" style="height: 80%" data-value="80"></div>
+        </div>
+        <br />
+      </div>
+      <button id="startButton">Test</button>
+    </div>
+
+    <!-- Основной сайт -->
+    <div id="mainContent" class="hidden">
+      <div id="tsparticles"></div>
+      <audio id="birthdayMusic" loop>
+        <source src="happy_birthday.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <div id="envelopeContainer">
+        <dotlottie-player
+          id="envelopeAnimation"
+          src="https://lottie.host/a8182050-b300-494c-9b60-cfd5c8fa4dbc/9OOmv1wTLM.lottie"
+          background="transparent"
+          speed="1"
+          style="width: 200px; height: 200px"
+          autoplay="false"
+          loop="false"
+        ></dotlottie-player>
+        <div id="letter" class="hidden">
+          Любимая Машенька,
+          <p>
+            Ты много работаешь, учишься, постоянно стремишься к новым вершинам.
+            Я искренне восхищаюсь твоей энергией, трудолюбием и упорством.
+          </p>
+          <p>
+            Но сегодня я хочу пожелать тебе того, чего часто не хватает —
+            <strong>спокойствия</strong>. Пусть каждый день приносит тебе больше
+            гармонии, отдыха и радости.
+          </p>
+          <p>
+            Внизу тебя ждёт небольшой подарок — это мой способ напомнить тебе,
+            как важно делать паузу и наслаждаться моментами. Надеюсь, он подарит
+            тебе несколько минут приятного расслабления.
+          </p>
+          <p>С днём рождения!</p>
+          <p id="signature">Целую щечки, твой Илюша</p>
+
+          <!-- Подарок внутри письма -->
+          <dotlottie-player
+            id="giftAnimation"
+            src="https://lottie.host/3f51821d-07f0-4401-8351-d5de8397e661/uFxJucOS5t.lottie"
+            speed="1"
+            loop
+            autoplay
+          ></dotlottie-player>
+        </div>
+      </div>
+      <div id="birdsContainer" style="display: none"></div>
+    </div>
+
+    <!-- Подключение библиотек -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.6/tsparticles.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script src="particlesConfig.js"></script>
+    <script src="confettiConfig.js"></script>
+    <script src="scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+  </body>
+</html>

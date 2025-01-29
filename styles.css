@@ -1,0 +1,239 @@
+/* Основные стили */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow: hidden;
+  background-color: #62a8c6;
+}
+
+#initialScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 1;
+  transition: opacity 2s ease;
+  pointer-events: all;
+}
+#mainContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 1;
+  pointer-events: all;
+}
+
+#initialScreen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#mainContent.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#chart {
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(to right, #6a4c93, #1982c4);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #61dafb;
+  color: #282c34;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #21a1f1;
+}
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#envelopeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 2s ease;
+  z-index: 1;
+}
+
+#envelopeContainer.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+dotlottie-player {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+dotlottie-player:hover {
+  transform: scale(1.1);
+}
+#letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6) rotate(-5deg);
+  width: 400px;
+  max-width: 450px;
+  height: auto;
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
+  color: #000000;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  text-align: justify;
+  font-size: 18px;
+  font-family: "Georgia", serif;
+  border: 2px solid #d1cac0;
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.8s ease;
+  z-index: 2;
+  font-family: "Caveat", cursive;
+}
+
+#letter p {
+  line-height: 1.8;
+  text-indent: 30px; /* Отступ в начале каждого абзаца */
+}
+
+#letter.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.5) rotate(-10deg);
+}
+
+#letter.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  pointer-events: all;
+}
+
+#giftAnimation {
+  position: absolute;
+  bottom: 10px;
+  left: 70px;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 2s ease;
+  z-index: 2;
+  width: 65px; /* Уменьшаем ширину */
+  height: 80px; /* Уменьшаем высоту */
+}
+
+#giftAnimation.visible {
+  opacity: 1;
+}
+
+#signature {
+  text-align: right; /* Выравниваем текст по правому краю */
+  font-size: 18px; /* Настроить размер шрифта, если нужно */
+  font-family: "Georgia", serif; /* Можно изменить шрифт */
+  font-family: "Caveat", cursive;
+  font-weight: 500;
+}
+#handwritingText {
+  font-size: 20px;
+  font-family: "Dancing Script", cursive; /* Красивый рукописный шрифт */
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid transparent;
+  width: 0;
+  display: inline-block;
+}
+#giftAnimation,
+#letter {
+  transition: opacity 1s ease, display 1s ease;
+}
+#birdsContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999; /* Поверх всего */
+  opacity: 0; /* Начинаем с невидимого состояния */
+  transition: opacity 2s ease-in-out; /* Плавное проявление за 2 секунды */
+}
+#fakeChart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 250px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  font-size: 12px;
+  color: white;
+  padding-right: 8px;
+}
+
+.chart-content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+.bar {
+  width: 25px;
+  background: #4f517d;
+  border-radius: 4px;
+  position: relative;
+}
+
+.bar::after {
+  content: attr(data-value);
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: white;
+}
