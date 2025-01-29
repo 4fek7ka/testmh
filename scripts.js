@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startButton.addEventListener("click", () => {
     console.log("Кнопка нажата. Начинаем переход...");
-
+    music.volume = 0.3;
     // Плавное исчезновение первой страницы
     initialScreen.classList.add("hidden");
     envelopeAnimation.stop();
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Останавливаем музыку
     let fadeOutInterval = setInterval(() => {
       if (music.volume > 0.05) {
-        music.volume -= 0.05; // Уменьшаем громкость постепенно
+        music.volume -= 0.001; // Уменьшаем громкость постепенно
       } else {
         clearInterval(fadeOutInterval);
         music.pause();
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Включаем новую музыку **Только один раз**
         playNewMusic();
       }
-    }, 120);
+    }, 12);
 
     // Плавное исчезновение подарка и письма
     giftAnimation.style.opacity = 0;
@@ -161,12 +161,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Плавное увеличение громкости
     let fadeInInterval = setInterval(() => {
-      if (newMusic.volume < 0.9) {
-        newMusic.volume += 0.05;
+      if (newMusic.volume < 0.1) {
+        newMusic.volume += 0.001;
       } else {
         clearInterval(fadeInInterval);
-        newMusic.volume = 1.0; // Устанавливаем окончательную громкость
+        newMusic.volume = 0.1; // Устанавливаем окончательную громкость
       }
-    }, 200);
+    }, 20);
   }
 });
