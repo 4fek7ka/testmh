@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startButton.addEventListener("click", () => {
     console.log("Кнопка нажата. Начинаем переход...");
-    music.volume = 0.3;
+    music.volume = 0.25;
     // Плавное исчезновение первой страницы
     initialScreen.classList.add("hidden");
     envelopeAnimation.stop();
