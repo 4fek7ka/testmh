@@ -88,12 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Останавливаем музыку
     let fadeOutInterval = setInterval(() => {
-      if (music.volume > 0.05) {
+      if (music.volume > 0.03) {
         music.volume -= 0.001; // Уменьшаем громкость постепенно
       } else {
         clearInterval(fadeOutInterval);
         music.pause();
-        music.volume = 1.0; // Восстанавливаем громкость для следующего проигрывания
+        music.volume = 0.3 // Восстанавливаем громкость для следующего проигрывания
         console.log("Музыка остановлена.");
 
         // Включаем новую музыку **Только один раз**
