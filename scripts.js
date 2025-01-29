@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
           // Задержка для показа подарка через 15 секунд
           setTimeout(() => {
             giftAnimation.classList.add("visible"); // Показываем подарок
-          }, 10000); // 15 секунд
+          }, 5000); // 15 секунд
         });
       }, 2000);
 
